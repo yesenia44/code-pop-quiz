@@ -52,6 +52,15 @@ let questions = [
             { text: "Hypertrial markup list", correct: false}
 
         ]
+    },
+    {
+        question: "Where does the footer go in the html file?",
+        answers: [
+            { text: "at the top of the page", correct: false},
+            { text: "at the bottom of the page", correct: true},
+            { text: "in the middle of the page", correct: false},
+            { text: "underneath the head tag", correct: false}
+        ]
     }
 ];
 
