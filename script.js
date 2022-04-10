@@ -1,7 +1,7 @@
 var startButton = document.querySelector("#start-game")
 var gameStart = document.querySelector("#game-start")
 var gameContainer = document.querySelector("#questions")
-var questionContainer = document.getElementById("#question")
+var questionEl = document.querySelector("#question")
 var answerButtons = document.getElementById("#answers")
 
 // need a questions array - I recommend using an array of objects with a question and answers in each object
@@ -11,41 +11,57 @@ var answerButtons = document.getElementById("#answers")
 function startGame() {
     gameStart.style.display = "none"
     gameContainer.style.display = "block"
-    displayQuestions()
-}
+    currentQuestionIndex = 0
+    display()
 
-function displayQuestions() {
-    questionContainer.innerText = questions
+function display(question) {
+    questionEl.innerHTML = questions[currentQuestionIndex].question;
+    answerButtons.innerHTML = questions[currentQuestion]
+    
+       
+    }    
 }
-
-var questions = [
+var questions= 0
+let questions = [
     {
-        question: "blah blah?",
-        answers: [
-            { text: "0", correct: true },
-            { text: "20", correct: false }
+        title: "What does CSS stands for?",
+        choices: [
+            { text: "Cascade Style Sheet", correct: true },
+            { text: "Color Style Sheet", correct: false },
+            { text: "Create State Safe", correct: false},
+            { text: "Cloud Summer Style", correct: false}
         ]
     
     },
     {
-        question: "blah?",
-        answers: [
-            { text: "0", correct: false },
-            { text: "1", correct: false},
-            { text: "2", correct: true}
+        title: "Which of the following is the foundation for web pages?",
+        choices: [
+            { text: "JavaScript", correct: false },
+            { text: "CSS", correct: false},
+            { text: "HTML", correct: true},
+            { text: "MySQL", correct: false}
 
         ]
     },
     {
-        question: "blah?",
+        question: "What does HTML stands for?",
         answers: [
-            { text: "0", correct: false },
-            { text: "1", correct: false},
-            { text: "2", correct: true}
+            { text: "Hypertext main language", correct: false },
+            { text: "Hypertrial markup language", correct: false},
+            { text: "Hypertext markup language", correct: true},
+            { text: "Hypertrial markup list", correct: false}
 
         ]
     }
-]
+];
+
+
+
+
+   
+
+
 
 
 startButton.addEventListener("click" , startGame)
+
